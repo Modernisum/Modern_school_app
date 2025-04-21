@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "flutter-responsive-portfolio-webapp"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "flutter-responsive-portfolio-webapp-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

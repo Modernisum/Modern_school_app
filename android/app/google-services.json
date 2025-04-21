@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1085414527934",
+    "firebase_url": "https://sample-firebase-ai-app-200a6-default-rtdb.firebaseio.com",
+    "project_id": "sample-firebase-ai-app-200a6",
+    "storage_bucket": "sample-firebase-ai-app-200a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085414527934:android:5c28d533fb6e64423a1fef",
+        "android_client_info": {
+          "package_name": "com.example.school_management_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB4dCQB-yvD90rlhuiidd_rTE7YT-v8-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085414527934:android:2b4c31239d44c1fa3a1fef",
+        "android_client_info": {
+          "package_name": "com.example.teacher_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB4dCQB-yvD90rlhuiidd_rTE7YT-v8-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
