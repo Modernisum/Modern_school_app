@@ -313,24 +313,19 @@ class SProfileScreen extends StatelessWidget {
                                                             int index) {
                                                       return SubjectMarksCard(
                                                         subjectname: _controller
-                                                            .studentMarks
-                                                            .value[index]
+                                                            .studentMarks[index]
                                                             .subjectname,
                                                         test: _controller
-                                                            .studentMarks
-                                                            .value[index]
+                                                            .studentMarks[index]
                                                             .test,
                                                         homework: _controller
-                                                            .studentMarks
-                                                            .value[index]
+                                                            .studentMarks[index]
                                                             .homework,
                                                         exam1: _controller
-                                                            .studentMarks
-                                                            .value[index]
+                                                            .studentMarks[index]
                                                             .exam1,
                                                         exam2: _controller
-                                                            .studentMarks
-                                                            .value[index]
+                                                            .studentMarks[index]
                                                             .exam2,
                                                       );
                                                     },
@@ -406,14 +401,14 @@ class SProfileScreen extends StatelessWidget {
                                                     .length, (index) {
                                               print('this is drop item ' +
                                                   dropController
-                                                      .subjectNames.value[index]
+                                                      .subjectNames[index]
                                                       .toString());
                                               return DropdownMenuItem<String>(
                                                   value: dropController
-                                                      .subjectNames.value[index]
+                                                      .subjectNames[index]
                                                       .toString(),
                                                   child: Text(
-                                                      '${dropController.subjectNames.value[index]}'));
+                                                      '${dropController.subjectNames[index]}'));
                                             }),
                                           ),
                                           SizedBox(
@@ -448,10 +443,10 @@ class SProfileScreen extends StatelessWidget {
                                                 (index) {
                                               return DropdownMenuItem<String>(
                                                   value: dropController
-                                                      .markType.value[index]
+                                                      .markType[index]
                                                       .toString(),
                                                   child: Text(
-                                                    '${dropController.markType.value[index]}',
+                                                    '${dropController.markType[index]}',
                                                   ));
                                             }),
                                           ),

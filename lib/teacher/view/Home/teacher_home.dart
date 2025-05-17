@@ -143,15 +143,14 @@ class HomeTeacher extends StatelessWidget {
                 else {
                   return ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: _controller.classesList.value.length,
+                    itemCount: _controller.classesList.length,
                     itemBuilder: (BuildContext context, int index) {
                       return TeacherClassesCard(
-                        section: _controller.classesList.value[index].section,
-                        grade: _controller.classesList.value[index].grade,
-                        numberOfStudents: _controller
-                            .classesList.value[index].numberOfstudents,
-                        classId:
-                            _controller.classesList.value[index].classroomID,
+                        section: _controller.classesList[index].section,
+                        grade: _controller.classesList[index].grade,
+                        numberOfStudents:
+                            _controller.classesList[index].numberOfstudents,
+                        classId: _controller.classesList[index].classroomID,
                       );
                     },
                   );
@@ -236,7 +235,7 @@ class programCard extends StatefulWidget {
     required this.gProgram,
   });
 
-  Program gProgram;
+  final Program gProgram;
 
   @override
   State<programCard> createState() => _programCardState();
@@ -258,9 +257,8 @@ class _programCardState extends State<programCard> {
     IsolateNameServer.registerPortWithName(
         _port.sendPort, 'downloader_send_port');
     _port.listen((dynamic data) {
-      String id = data[0];
-      DownloadTaskStatus status = data[1];
-      int progress = data[2];
+      //DownloadTaskStatus status = data[1];
+      //int progress = data[2];
       setState(() {});
     });
 

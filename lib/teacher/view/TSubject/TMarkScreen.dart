@@ -5,15 +5,12 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 import 'package:school_management_system/public/utils/font_families.dart';
 import 'package:school_management_system/student/Widgets/animated_progress_indicator.dart';
-import 'package:school_management_system/student/Widgets/custom_progress_indecator.dart';
+//import 'package:school_management_system/student/Widgets/custom_progress_indecator.dart';
 import 'package:school_management_system/teacher/controllers/SubjectController/TMarksController.dart';
 import 'package:school_management_system/teacher/view/SProfile/SProfileScreen.dart';
 import 'package:school_management_system/teacher/widgets/ConnectionStateMessages.dart';
 import 'package:school_management_system/teacher/widgets/Skilton.dart';
 import 'package:shimmer/shimmer.dart';
-
-var _controller = Get.put(TMarksController());
-var data = Get.arguments;
 
 class TMarkScreen extends StatelessWidget {
   const TMarkScreen({
@@ -27,7 +24,7 @@ class TMarkScreen extends StatelessWidget {
   final classId;
   @override
   Widget build(BuildContext context) {
-    var data = Get.arguments;
+    // var data = Get.arguments;
 
     print('=======================');
 
@@ -79,7 +76,6 @@ class TMarkScreen extends StatelessWidget {
                                 },
                                 itemBuilder: (BuildContext context, int index) {
                                   return ShimmerMarksLoading();
-                                  ;
                                 },
                               );
                             } else {

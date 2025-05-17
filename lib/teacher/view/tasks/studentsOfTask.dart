@@ -16,10 +16,10 @@ import 'package:school_management_system/teacher/widgets/ConnectionStateMessages
 
 class StudentsOfTask extends StatelessWidget {
   StudentsOfTask({Key? key, this.taskId, this.taskName}) : super(key: key);
-  var uncontroller = Get.find<StudentTaskInfoController>();
-  var chcontroller = Get.find<CheckedStudentTaskInfoController>();
-  var taskId;
-  var taskName;
+  final uncontroller = Get.find<StudentTaskInfoController>();
+  final chcontroller = Get.find<CheckedStudentTaskInfoController>();
+  final taskId;
+  final taskName;
   @override
   Widget build(BuildContext context) {
     var data = Get.parameters;
@@ -93,23 +93,20 @@ class StudentsOfTask extends StatelessWidget {
                   init: StudentTaskInfoController(),
                   builder: ((controller) {
                     return ListView.builder(
-                      itemCount: uncontroller.studentsTaskList.value.length,
+                      itemCount: uncontroller.studentsTaskList.length,
                       itemBuilder: (BuildContext context, int index) {
                         return StudenOfTaskCard(
                           studentName:
-                              uncontroller.studentsTaskList.value[index].name,
+                              uncontroller.studentsTaskList[index].name,
                           uploadDate: DateFormat("yyyy/MM/dd").format(
-                              uncontroller
-                                  .studentsTaskList.value[index].uploadeDate),
-                          taskId: uncontroller
-                              .studentsTaskList.value[index].task_id,
-                          taskUrl: uncontroller
-                              .studentsTaskList.value[index].taskUrl,
-                          photoUrl: uncontroller
-                              .studentsTaskList.value[index].photoUrl,
+                              uncontroller.studentsTaskList[index].uploadeDate),
+                          taskId: uncontroller.studentsTaskList[index].task_id,
+                          taskUrl: uncontroller.studentsTaskList[index].taskUrl,
+                          photoUrl:
+                              uncontroller.studentsTaskList[index].photoUrl,
                           index: index,
                           task_result_id:
-                              uncontroller.studentsTaskList.value[index].id,
+                              uncontroller.studentsTaskList[index].id,
                         );
                       },
                     );
@@ -144,25 +141,20 @@ class StudentsOfTask extends StatelessWidget {
                   init: CheckedStudentTaskInfoController(),
                   builder: ((controller) {
                     return ListView.builder(
-                      itemCount: chcontroller.studentList.value.length,
+                      itemCount: chcontroller.studentList.length,
                       itemBuilder: (BuildContext context, int index) {
                         return CheckedStudentsOfTaskCard(
-                          name: chcontroller.studentList.value[index].name,
+                          name: chcontroller.studentList[index].name,
                           uploadeDate: DateFormat("yyyy/MM/dd").format(
-                              chcontroller
-                                  .studentList.value[index].uploadeDate),
-                          mark: chcontroller.studentList.value[index].mark,
-                          photoUrl:
-                              chcontroller.studentList.value[index].photoUrl,
-                          id: chcontroller.studentList.value[index].id,
-                          taskUrl:
-                              chcontroller.studentList.value[index].taskUrl,
-                          task_id:
-                              chcontroller.studentList.value[index].task_id,
-                          class_id:
-                              chcontroller.studentList.value[index].class_id,
+                              chcontroller.studentList[index].uploadeDate),
+                          mark: chcontroller.studentList[index].mark,
+                          photoUrl: chcontroller.studentList[index].photoUrl,
+                          id: chcontroller.studentList[index].id,
+                          taskUrl: chcontroller.studentList[index].taskUrl,
+                          task_id: chcontroller.studentList[index].task_id,
+                          class_id: chcontroller.studentList[index].class_id,
                           student_id:
-                              chcontroller.studentList.value[index].student_id,
+                              chcontroller.studentList[index].student_id,
                         );
                       },
                     );
@@ -368,7 +360,7 @@ class StudenOfTaskCard extends StatelessWidget {
   final taskId;
   final index;
   final task_result_id;
-  var uncontroller = Get.find<StudentTaskInfoController>();
+  final uncontroller = Get.find<StudentTaskInfoController>();
   @override
   Widget build(BuildContext context) {
     uncontroller.task_id.value = taskId.toString();

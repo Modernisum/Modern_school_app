@@ -7,7 +7,7 @@ import 'package:school_management_system/teacher/controllers/TasksControllers/bo
 
 final _controller =
     Get.put<BottomSheetController>(BottomSheetController(), permanent: true);
-var classSection = _controller.classSection.value;
+// Removed: var classSection = _controller.classSection.value;
 
 class ChosingClassSection extends StatelessWidget {
   const ChosingClassSection({
@@ -19,18 +19,18 @@ class ChosingClassSection extends StatelessWidget {
     return SizedBox(
       height: 55.h,
       width: 428.w,
-      child: GetBuilder(
+      child: GetBuilder<BottomSheetController>(
         init: BottomSheetController(),
-        builder: ((controller) => ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: classSection.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ClassRoomSectionOption(
-                  section: classSection[index],
-                  index: index + 1,
-                );
-              },
-            )),
+        builder: (controller) => ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: controller.classSection.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ClassRoomSectionOption(
+              section: controller.classSection[index],
+              index: index + 1,
+            );
+          },
+        ),
       ),
     );
   }
@@ -38,13 +38,14 @@ class ChosingClassSection extends StatelessWidget {
 
 class ClassRoomSectionOption extends StatelessWidget {
   const ClassRoomSectionOption({
-    this.section,
+    required this.section,
     Key? key,
-    this.index,
+    required this.index,
   }) : super(key: key);
 
-  final section;
-  final index;
+  final String section; // Added proper type annotation
+  final int index; // Added proper type annotation
+
   @override
   Widget build(BuildContext context) {
     return Padding(

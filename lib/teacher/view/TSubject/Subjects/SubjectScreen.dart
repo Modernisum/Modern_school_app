@@ -5,7 +5,7 @@ import 'package:school_management_system/public/utils/constant.dart';
 import 'package:school_management_system/public/utils/font_families.dart';
 import 'package:school_management_system/routes/app_pages.dart';
 import 'package:school_management_system/teacher/controllers/SubjectController/TeacherSubjectController.dart';
-import 'package:school_management_system/teacher/view/TSubject/TSubjectsInfo.dart';
+//import 'package:school_management_system/teacher/view/TSubject/TSubjectsInfo.dart';
 import 'package:school_management_system/teacher/widgets/ConnectionStateMessages.dart';
 import 'package:school_management_system/teacher/widgets/Skilton.dart';
 import 'package:shimmer/shimmer.dart';
@@ -65,7 +65,7 @@ class SubjectsListScreen extends StatelessWidget {
                     return const ErrorMessage();
                   } else {
                     return GridView.builder(
-                        itemCount: _controller.teacherSubjectsList.value.length,
+                        itemCount: _controller.teacherSubjectsList.length,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             crossAxisSpacing: 24.w,
@@ -73,9 +73,9 @@ class SubjectsListScreen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return TsubjectCard(
                             subjectName: _controller
-                                .teacherSubjectsList.value[index].subjectName,
+                                .teacherSubjectsList[index].subjectName,
                             subjectId: _controller
-                                .teacherSubjectsList.value[index].subjectId,
+                                .teacherSubjectsList[index].subjectId,
                             grade: data['grade'].toString(),
                             classId: data['classid'].toString(),
                           );

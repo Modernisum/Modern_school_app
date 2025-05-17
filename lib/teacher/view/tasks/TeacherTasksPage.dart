@@ -71,15 +71,15 @@ class TeacherTasksPage extends StatelessWidget {
                                   return GridView.builder(
                                       dragStartBehavior: DragStartBehavior.down,
                                       itemCount:
-                                          taskcontroller.tasksList.value.length,
+                                          taskcontroller.tasksList.length,
                                       gridDelegate:
                                           SliverGridDelegateWithFixedCrossAxisCount(
                                               crossAxisCount: 2,
                                               crossAxisSpacing: 24.w,
                                               mainAxisSpacing: 24.w),
                                       itemBuilder: (BuildContext, index) {
-                                        var item = taskcontroller
-                                            .tasksList.value[index];
+                                        var item =
+                                            taskcontroller.tasksList[index];
                                         DateTime date = DateTime.parse(item
                                             .uploadDate
                                             .toDate()
@@ -463,11 +463,10 @@ class BottomSheetButton extends StatelessWidget {
                                 bottomController.teachersubject.length,
                                 (index) {
                               return DropdownMenuItem<String>(
-                                  value: bottomController
-                                      .teachersubject.value[index]
+                                  value: bottomController.teachersubject[index]
                                       .toString(),
                                   child: Text(
-                                    '${bottomController.teachersubject.value[index]}',
+                                    '${bottomController.teachersubject[index]}',
                                   ));
                             }),
                           ),
@@ -566,7 +565,6 @@ class AddButton extends StatelessWidget {
     this.onpress,
   }) : super(key: key);
 
-  @override
   final Bcontext;
   final onpress;
   Widget build(BuildContext context) {

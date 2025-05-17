@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:school_management_system/public/utils/constant.dart';
+//import 'package:school_management_system/public/utils/constant.dart';
 
 class Skilton extends StatelessWidget {
   const Skilton({

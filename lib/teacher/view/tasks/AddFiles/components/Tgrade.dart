@@ -7,7 +7,7 @@ import 'package:school_management_system/teacher/controllers/TasksControllers/bo
 
 final _controller =
     Get.put<BottomSheetController>(BottomSheetController(), permanent: true);
-var gradeList = _controller.GradeNumber.value;
+// Removed top-level access to .value; use inside widget build methods instead.
 
 class ChosingGradeBar extends StatelessWidget {
   const ChosingGradeBar({
@@ -19,18 +19,21 @@ class ChosingGradeBar extends StatelessWidget {
     return SizedBox(
       height: 55.h,
       width: 428.w,
-      child: GetBuilder(
+      child: GetBuilder<BottomSheetController>(
         init: BottomSheetController(),
-        builder: ((controller) => ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: gradeList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return GradeOption(
-                  grade: gradeList[index],
-                  index: index + 1,
-                );
-              },
-            )),
+        builder: (controller) {
+          final gradeList = controller.GradeNumber;
+          return ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: gradeList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return GradeOption(
+                grade: gradeList[index],
+                index: index + 1,
+              );
+            },
+          );
+        },
       ),
     );
   }

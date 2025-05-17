@@ -9,8 +9,6 @@ import 'package:school_management_system/public/utils/font_families.dart';
 import 'package:school_management_system/student/view/Announcements/announcementsCard.dart';
 import 'package:school_management_system/teacher/controllers/AnnouncementsController/AnnouncementsController.dart';
 
-var _controller = Get.put<TAnnouncementsController>(TAnnouncementsController());
-
 class TAnnouncementsScreen extends StatelessWidget {
   const TAnnouncementsScreen({Key? key}) : super(key: key);
 

@@ -7,10 +7,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 import 'package:school_management_system/public/utils/font_style.dart';
 import 'package:school_management_system/student/Widgets/CustomAppBar.dart';
-import 'package:school_management_system/student/Widgets/custom_progress_indecator.dart';
+//import 'package:school_management_system/student/Widgets/custom_progress_indecator.dart';
 import 'package:school_management_system/student/Widgets/global_info.dart';
 import 'package:school_management_system/teacher/controllers/TProfilesController/TProfileController.dart';
-import 'package:school_management_system/teacher/view/Home/homeFlashbar.dart';
+//import 'package:school_management_system/teacher/view/Home/homeFlashbar.dart';
 import 'package:school_management_system/teacher/view/tasks/AddFiles/components/SelectFile.dart';
 
 var _controller = Get.put(TProfileController());

@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 import 'package:school_management_system/public/utils/font_families.dart';
-import 'package:school_management_system/student/controllers/lessonsController.dart';
+//import 'package:school_management_system/student/controllers/lessonsController.dart';
 import 'package:school_management_system/teacher/controllers/SubjectController/lessonsController.dart';
 import 'package:school_management_system/teacher/controllers/TasksControllers/bottomSheetController.dart';
 import 'package:school_management_system/teacher/view/tasks/TeacherTasksPage.dart';
@@ -16,10 +16,8 @@ import 'package:shimmer/shimmer.dart';
 var _controller = Get.put(TLessonsController());
 
 class TLessonScreen extends StatelessWidget {
+  final dynamic subjectId;
   TLessonScreen({Key? key, this.subjectId}) : super(key: key);
-
-  @override
-  var subjectId;
 
   @override
   Widget build(BuildContext context) {
@@ -148,9 +146,9 @@ class TLessonScreen extends StatelessWidget {
                                           ((TLessonsController controller) {
                                         return LessonCard(
                                           title: _controller
-                                              .lessonslist.value[index].title,
+                                              .lessonslist[index].title,
                                           checked: _controller
-                                              .lessonslist.value[index].checked,
+                                              .lessonslist[index].checked,
                                           index: index + 1,
                                         );
                                       })),
@@ -209,7 +207,6 @@ class LessonCard extends StatelessWidget {
     this.checked,
   }) : super(key: key);
 
-  @override
   final title;
   final index;
   final checked;

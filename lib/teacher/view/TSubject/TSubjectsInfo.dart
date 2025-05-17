@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 import 'package:school_management_system/public/utils/font_families.dart';
-import 'package:school_management_system/student/controllers/lessonsController.dart';
+//import 'package:school_management_system/student/controllers/lessonsController.dart';
 import 'package:school_management_system/teacher/controllers/SubjectController/SubjectMainScreenController.dart';
 import 'package:school_management_system/teacher/controllers/TasksControllers/bottomSheetController.dart';
 import 'package:school_management_system/teacher/view/TSubject/TMarkScreen.dart';
@@ -224,6 +224,5 @@ class TSubjectScreen extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
