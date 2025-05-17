@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:school_management_system/public/config/user_information.dart';
 
 import '../../../teacher/model/subject/TMarksModel.dart';
@@ -13,7 +13,6 @@ class StdProfileServices {
 
       for (var subjectid in subjectListId) {
         var subjectName = subjectid.name;
-        var subjectId = subjectid.id;
         var test = await markServices.getTestMark(subjectid.id, grade, uid);
         var homework =
             await markServices.getHomeWorkMark(subjectid.id, grade, uid);

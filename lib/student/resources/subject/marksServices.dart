@@ -21,10 +21,7 @@ class MarkServices {
       exam1Result.fmark = element.data()['final_mark'];
     });
 
-    if (exam1Result != null)
-      print(exam1Result.title);
-    else
-      print('is fucking null');
+    print(exam1Result.title);
 
     return exam1Result;
   }
@@ -43,10 +40,7 @@ class MarkServices {
       testResult.fmark = element.data()['final_mark'];
     });
 
-    if (testResult != null)
-      print(testResult.title);
-    else
-      print('is fucking null');
+    print(testResult.title);
 
     return testResult;
   }
@@ -66,10 +60,7 @@ class MarkServices {
       homeworksResult.fmark = element.data()['final_mark'];
     });
 
-    if (homeworksResult != null)
-      print(homeworksResult.title);
-    else
-      print('is fucking null');
+    print(homeworksResult.title);
 
     return homeworksResult;
   }
@@ -88,10 +79,7 @@ class MarkServices {
       exam2Result.fmark = element.data()['final_mark'];
     });
 
-    if (exam2Result != null)
-      print(exam2Result.title);
-    else
-      print('is fucking null');
+    print(exam2Result.title);
 
     return exam2Result;
   }

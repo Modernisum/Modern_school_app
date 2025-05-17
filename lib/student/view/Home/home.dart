@@ -7,7 +7,7 @@ import 'package:school_management_system/student/controllers/home_controller.dar
 import 'package:school_management_system/student/controllers/subject/subjectController.dart';
 import 'package:school_management_system/student/view/Announcements/AnnouncementsPage.dart';
 import 'package:school_management_system/student/view/Home/home_appbar.dart';
-import 'package:school_management_system/student/view/Home/home_body.dart';
+//import 'package:school_management_system/student/view/Home/home_body.dart';
 import 'package:school_management_system/student/view/Home/side_menu.dart';
 
 final HomeController c = Get.put<HomeController>(HomeController());
@@ -18,7 +18,7 @@ class HomeStudent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _SubjectController.subjectList.value.forEach((elemn) {
+    _SubjectController.subjectList.forEach((elemn) {
       print(elemn.name);
       print(elemn.teacherName);
     });
@@ -30,7 +30,7 @@ class HomeStudent extends StatelessWidget {
           child: GetBuilder<HomeController>(
             init: HomeController(),
             builder: (c) => CostumHomeAppBar(
-                title: c.appBarTitles.value[c.currentIndex.value],
+                title: c.appBarTitles[c.currentIndex.value],
                 style: redHatRegularStyle(fontSize: 20, color: Colors.white),
                 ontap: () {
                   Get.to(() => AnnouncementsPage());
@@ -40,7 +40,7 @@ class HomeStudent extends StatelessWidget {
         body: GetBuilder<HomeController>(
           init: HomeController(),
           builder: (c) {
-            return c.bottomNavgationBarPages.value[c.currentIndex.value];
+            return c.bottomNavgationBarPages[c.currentIndex.value];
           },
         ),
         bottomNavigationBar: Obx(

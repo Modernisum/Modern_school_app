@@ -7,7 +7,7 @@ import 'package:school_management_system/student/Widgets/custom_progress_indecat
 import 'package:school_management_system/teacher/widgets/ConnectionStateMessages.dart';
 import '../../../public/utils/font_families.dart';
 import '../../../public/utils/font_style.dart';
-import 'dart:typed_data';
+//import 'dart:typed_data';
 import '../../../teacher/view/SProfile/SProfileScreen.dart';
 import '../../Widgets/global_info.dart';
 import '../../controllers/stprofile_controller.dart';
@@ -37,10 +37,7 @@ class StudentProfile extends StatelessWidget {
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.white),
                         image: DecorationImage(
-                          image: UserInformation.urlAvatr != null
-                              ? NetworkImage(UserInformation.urlAvatr)
-                              : AssetImage('assets/images/photo.png')
-                                  as ImageProvider,
+                          image: NetworkImage(UserInformation.urlAvatr),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -286,15 +283,13 @@ class StudentProfile extends StatelessWidget {
                                     itemBuilder:
                                         (BuildContext context, int index) {
                                       return SubjectMarksCard(
-                                        subjectname: c.studentMarks.value[index]
-                                            .subjectname,
-                                        test: c.studentMarks.value[index].test,
-                                        homework: c
-                                            .studentMarks.value[index].homework,
-                                        exam1:
-                                            c.studentMarks.value[index].exam1,
-                                        exam2:
-                                            c.studentMarks.value[index].exam2,
+                                        subjectname:
+                                            c.studentMarks[index].subjectname,
+                                        test: c.studentMarks[index].test,
+                                        homework:
+                                            c.studentMarks[index].homework,
+                                        exam1: c.studentMarks[index].exam1,
+                                        exam2: c.studentMarks[index].exam2,
                                       );
                                     },
                                   ),

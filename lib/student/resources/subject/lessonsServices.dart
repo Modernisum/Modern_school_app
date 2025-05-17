@@ -47,8 +47,6 @@ class LessonsServices {
       lessonRefrenceList = value.data()?['lessons'];
     });
     for (var i = 0; i < lessonRefrenceList.length; i++) {
-      var isTaken;
-      var lessonName;
       await FirebaseFirestore.instance
           .doc('/lessons/${lessonRefrenceList[i].id}')
           .get()

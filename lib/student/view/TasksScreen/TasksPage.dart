@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'package:school_management_system/public/utils/constant.dart';
-import 'package:school_management_system/public/utils/font_style.dart';
+//mport 'package:school_management_system/public/utils/font_style.dart';
 import '../../../teacher/view/tasks/TeacherTasksPage.dart';
-import '../../Widgets/CustomAppBar.dart';
+//import '../../Widgets/CustomAppBar.dart';
 import '../../controllers/TasksController.dart';
 
 import 'TasksCard.dart';
@@ -58,7 +58,7 @@ class TasksPage extends StatelessWidget {
                                   child: Text(
                                       'Somthing went wrong! please check your connection.'))));
                     } else {
-                      if (_controller.tasks.value.isEmpty) {
+                      if (_controller.tasks.isEmpty) {
                         return const Center(
                             child: Text('You have no tasks this time'));
                       } else {
@@ -81,14 +81,14 @@ class TasksPage extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: TasksCard(
-                                      name: controller.tasks.value[index].name,
-                                      deadline: controller
-                                          .tasks.value[index].deadline,
-                                      subjectName: controller
-                                          .tasks.value[index].subjectName,
-                                      uploadDate: controller
-                                          .tasks.value[index].uploadDate,
-                                      task_id: controller.tasks.value[index].id,
+                                      name: controller.tasks[index].name,
+                                      deadline:
+                                          controller.tasks[index].deadline,
+                                      subjectName:
+                                          controller.tasks[index].subjectName,
+                                      uploadDate:
+                                          controller.tasks[index].uploadDate,
+                                      task_id: controller.tasks[index].id,
                                     ),
                                   );
                                 });

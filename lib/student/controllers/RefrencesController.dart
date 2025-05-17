@@ -1,15 +1,15 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/state_manager.dart';
 import 'package:school_management_system/public/config/user_information.dart';
 import 'package:school_management_system/student/models/Adjuncts/filtter/DifficultyFiltter.dart';
 import 'package:school_management_system/student/models/Adjuncts/filtter/filteredData.dart';
 import 'package:school_management_system/student/models/Adjuncts/filtter/gradeCircle.dart';
 import 'package:school_management_system/student/models/Adjuncts/filtter/subjectFiltterModel.dart';
-import 'package:school_management_system/student/models/Adjuncts/refrencesFiles.dart';
-import 'package:school_management_system/student/models/Adjuncts/refrencesVideos.dart';
+//import 'package:school_management_system/student/models/Adjuncts/refrencesFiles.dart';
+//import 'package:school_management_system/student/models/Adjuncts/refrencesVideos.dart';
 import 'package:school_management_system/student/resources/RefrencesServices/RefrencesPdfServices.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:http/http.dart' as http;
+//import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+//import 'package:http/http.dart' as http;
 
 import '../../teacher/resources/TAdjunctsServices/TAdjunctsServices.dart';
 
@@ -21,12 +21,12 @@ class RefrencesController extends GetxController {
   void onInit() async {
     super.onInit();
     for (var item in UserInformation.Subjects) {
-      subjectsName.value.add(SubjectFiltter(subjectName: item.name));
+      subjectsName.add(SubjectFiltter(subjectName: item.name));
     }
     var serv = TAdjunctsServices();
     var grades = await serv.getAllGrade();
     for (var item in grades) {
-      GradeNumber.value.add(GradeCircle(grade: item));
+      GradeNumber.add(GradeCircle(grade: item));
     }
   }
 

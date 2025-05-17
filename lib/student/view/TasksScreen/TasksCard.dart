@@ -6,7 +6,7 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:path/path.dart';
+//import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 import 'package:school_management_system/student/resources/task/task_api.dart';
@@ -40,14 +40,10 @@ class TasksCard extends StatelessWidget {
   final deadline;
   final task_id;
   final url;
-  @override
-  void initState() {
-    print('Helooooooooooooooooooo');
-  }
 
   @override
   Widget build(BuildContext context) {
-    final fileName = file != null ? basename(file!.path) : 'no file';
+    // Removed unused variable 'fileName'
     _controller.task_id.value = task_id;
     _controller.task_name.value = name;
     print("kkkkkkkkkkkkkkkkkkkkkkk");
@@ -138,7 +134,7 @@ class TasksCard extends StatelessWidget {
 
                               final baseStorage =
                                   await getExternalStorageDirectory();
-                              final id = await FlutterDownloader.enqueue(
+                              await FlutterDownloader.enqueue(
                                 url: '${url}',
                                 savedDir: baseStorage!.path,
                                 fileName: '$name',

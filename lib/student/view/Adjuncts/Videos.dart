@@ -6,7 +6,7 @@ import 'package:school_management_system/student/controllers/RefrencesController
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 var _controller = Get.put(RefrencesController());
-var urlVideo = _controller.VideosInfo.value;
+// var urlVideo = _controller.VideosInfo.value;
 
 // Widget videos() {
 //   return SingleChildScrollView(
@@ -47,26 +47,26 @@ class Videos extends StatelessWidget {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return Center(child: Text('Loading...'));
                       } else if (_controller.isFiltred) {
-                        if (_controller.filtredDataListVideo.value.isEmpty) {
+                        if (_controller.filtredDataListVideo.isEmpty) {
                           return const Center(
                             child: Text('Nothings to show'),
                           );
                         } else {
                           return ListView.builder(
-                            itemCount:
-                                _controller.filtredDataListVideo.value.length,
+                            itemCount: _controller.filtredDataListVideo.length,
                             itemBuilder: (BuildContext context, int index) {
                               return RefrencesVideoCard(
-                                  url: _controller.VideosInfo.value[index].url);
+                                  url: _controller
+                                      .filtredDataListVideo[index].url);
                             },
                           );
                         }
                       } else {
                         return ListView.builder(
-                          itemCount: _controller.VideosInfo.value.length,
+                          itemCount: _controller.VideosInfo.length,
                           itemBuilder: (BuildContext context, int index) {
                             return RefrencesVideoCard(
-                                url: _controller.VideosInfo.value[index].url);
+                                url: _controller.VideosInfo[index].url);
                           },
                         );
                       }
@@ -91,7 +91,6 @@ class RefrencesVideoCard extends StatefulWidget {
 }
 
 class _refrencesVideoCardState extends State<RefrencesVideoCard> {
-  @override
   late YoutubePlayerController yController;
 
   @override

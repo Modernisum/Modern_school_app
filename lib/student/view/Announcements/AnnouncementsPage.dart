@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:school_management_system/public/config/user_information.dart';
+//import 'package:school_management_system/public/config/user_information.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 import 'package:school_management_system/public/utils/font_families.dart';
 import 'package:school_management_system/student/controllers/AnnouncementsController.dart';
@@ -11,8 +11,7 @@ import 'package:school_management_system/student/view/Announcements/announcement
 import 'package:intl/intl.dart';
 import 'package:school_management_system/teacher/widgets/ConnectionStateMessages.dart';
 
-var _controller = Get.put<AnnouncementsController>(AnnouncementsController());
-var announcementsList = _controller.announcementsList.value;
+// Remove the direct assignment to announcementsList.value here
 AnnouncementsServeces _annServices = AnnouncementsServeces();
 String userIdclassroom = '';
 

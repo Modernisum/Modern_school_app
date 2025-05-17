@@ -48,10 +48,8 @@ class LessonList extends StatelessWidget {
                             init: lessonsController(),
                             builder: ((controller) {
                               return LessonCard(
-                                title:
-                                    _controller.lessonslist.value[index].title,
-                                checked: _controller
-                                    .lessonslist.value[index].checked,
+                                title: _controller.lessonslist[index].title,
+                                checked: _controller.lessonslist[index].checked,
                                 index: index + 1,
                               );
                             })),
@@ -74,7 +72,6 @@ class LessonCard extends StatelessWidget {
     this.checked,
   }) : super(key: key);
 
-  @override
   final title;
   final index;
   final checked;

@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:school_management_system/public/utils/constant.dart';
-import 'package:school_management_system/public/utils/font_families.dart';
+//import 'package:school_management_system/public/utils/font_families.dart';
 import 'package:school_management_system/public/utils/font_style.dart';
-import 'package:school_management_system/student/Widgets/CustomAppBar.dart';
+//import 'package:school_management_system/student/Widgets/CustomAppBar.dart';
 import 'package:school_management_system/student/models/Adjuncts/refrencesChipsdata.dart';
 import 'package:school_management_system/student/view/Adjuncts/Quizz.dart';
 import 'package:school_management_system/student/view/Adjuncts/Videos.dart';
@@ -20,7 +20,6 @@ class Refrences extends StatefulWidget {
 }
 
 class _RefrencesState extends State<Refrences> {
-  @override
   int _index = 0;
   final adjunctsPage = [
     RefrencesPdf(),

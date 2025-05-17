@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:school_management_system/student/view/Adjuncts/Component/QuizzPage.dart';
+//import 'package:school_management_system/student/view/Adjuncts/Component/QuizzPage.dart';
 
 import '../../../public/utils/constant.dart';
 import '../../../public/utils/font_families.dart';
@@ -24,13 +24,13 @@ class _QuizzesState extends State<Quizzes> {
         return SizedBox(
           height: MediaQuery.of(context).size.height,
           child: ListView.builder(
-            itemCount: _controller.quizes.value.length,
+            itemCount: _controller.quizes.length,
             itemBuilder: (BuildContext context, int index) {
               return QuizCard(
-                name: _controller.quizes.value[index].name,
-                s_name: _controller.quizes.value[index].subject_name,
-                id: _controller.quizes.value[index].quiz_id,
-                def: _controller.quizes.value[index].def,
+                name: _controller.quizes[index].name,
+                s_name: _controller.quizes[index].subject_name,
+                id: _controller.quizes[index].quiz_id,
+                def: _controller.quizes[index].def,
               );
             },
           ),

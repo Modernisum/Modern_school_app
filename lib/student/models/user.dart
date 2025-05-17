@@ -1,4 +1,4 @@
-import 'package:meta/meta.dart';
+//import 'package:meta/meta.dart';
 
 import '../resources/chat/chat_utils.dart';
 
@@ -23,17 +23,17 @@ class User {
 
   const User({
     this.idUser,
-    this.Class, 
-    this.fees, 
-    this.grade, 
+    this.Class,
+    this.fees,
+    this.grade,
     this.parentphone,
     this.phone,
-    this.grade_average, 
-   required this.first_name,
-   required this.last_name,
+    this.grade_average,
+    required this.first_name,
+    required this.last_name,
     required this.urlAvatar,
-     this.lastMessageTime,
-     this.email,
+    this.lastMessageTime,
+    this.email,
   });
 
   User copyWith({
@@ -58,7 +58,7 @@ class User {
         email: email ?? this.email,
         urlAvatar: urlAvatar ?? this.urlAvatar,
         lastMessageTime: lastMessageTime as DateTime? ?? this.lastMessageTime,
-        grade_average: grade_average as double ,
+        grade_average: grade_average as double,
         grade: grade ?? this.grade,
         Class: Class ?? this.Class,
         fees: fees ?? this.fees,
@@ -84,7 +84,7 @@ class User {
   Map<String, dynamic> toJson() => {
         'uid': idUser,
         'first_name': first_name,
-        'last_name':last_name,
+        'last_name': last_name,
         'urlAvatar': urlAvatar,
         'lastMessageTime': Utils.fromDateTimeToJson(lastMessageTime!),
         'grade_average': grade_average,
@@ -93,6 +93,6 @@ class User {
         'fees': fees,
         'parentphone': parentphone,
         'phone': phone,
-        'email':email,
+        'email': email,
       };
 }

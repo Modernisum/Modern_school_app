@@ -19,10 +19,8 @@ class SubjectServices {
       });
       for (var item in subjectRefrencesList) {
         var lessonsNumber = 0;
-        var takenLessons = 0;
         var subjectName = '';
         var teacherName;
-        var teacherRefrence;
         await FirebaseFirestore.instance
             .collection('subject')
             .doc(item.toString())

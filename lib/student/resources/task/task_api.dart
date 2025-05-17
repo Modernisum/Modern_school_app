@@ -62,10 +62,7 @@ class taskServices {
       testResult.mark = element.data()['result'];
     });
 
-    if (testResult != null)
-      print(testResult.mark);
-    else
-      print('is fucking null');
+    print(testResult.mark);
 
     return testResult;
   }

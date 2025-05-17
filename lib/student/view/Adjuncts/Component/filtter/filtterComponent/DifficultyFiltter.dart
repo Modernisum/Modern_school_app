@@ -45,7 +45,6 @@ class DifficultyBar extends StatelessWidget {
     this.index,
   }) : super(key: key);
 
-  @override
   final difficulty;
   final index;
   Widget build(BuildContext context) {

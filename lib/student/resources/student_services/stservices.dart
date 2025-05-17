@@ -4,10 +4,9 @@ import 'package:school_management_system/student/models/user.dart';
 
 class StudentApi {
   static getinfo(String? idUser) async {
-    String docID;
     List user = [];
 
-    final ref = await FirebaseFirestore.instance
+    await FirebaseFirestore.instance
         .collection('students')
         .where('uid', isEqualTo: UserInformation.User_uId)
         .get()

@@ -8,17 +8,14 @@ import 'package:http/http.dart' as http;
 
 import '../../../public/config/user_information.dart';
 
-
-
-
-  Future<void> saveTokenToDatabase(String token) async {
-    String userId = FirebaseAuth.instance.currentUser!.uid;
-    await FirebaseFirestore.instance.collection('students').doc(userId).update({
-      'token': FieldValue.arrayUnion([token1]),
-    });
-    print("============token ====================");
-    print(token1);
-  }
+Future<void> saveTokenToDatabase(String token) async {
+  String userId = FirebaseAuth.instance.currentUser!.uid;
+  await FirebaseFirestore.instance.collection('students').doc(userId).update({
+    'token': FieldValue.arrayUnion([token1]),
+  });
+  print("============token ====================");
+  print(token1);
+}
 
 class Message extends StatefulWidget {
   const Message({Key? key}) : super(key: key);
@@ -34,37 +31,32 @@ var serverToken =
     "AAAAQE4NoSk:APA91bEczYqDFjpz6_EPghaa6rIQlVQMhwAzK1WGMgxqupcOYvaqhEDrorp-qiw95BxHoztknovhyftDwtr4ZgYeZPo4wWI6Oo3tlxiSarvHi1BR7Tibrj7rflFFoFQucBxBRWqhz-Y0";
 
 class _MessagingS extends State<Message> {
-
-late String _token;
-
   Future<void> setupToken() async {
     String? token = await FirebaseMessaging.instance.getToken();
     await saveTokenToDatabase(token!);
     FirebaseMessaging.instance.onTokenRefresh.listen(saveTokenToDatabase);
-     print("Doooooooooneeeeeeeeeee");
+    print("Doooooooooneeeeeeeeeee");
   }
+
   @override
   void initState() {
     super.initState();
-   //  getMessaging();
+    //  getMessaging();
     setupToken();
   }
-
-
 
   getMessaging() {
     FirebaseMessaging.onMessage.listen((message) {
       print("kkkkk");
     });
   }
+
   @override
   Widget build(BuildContext context) {
-     return Text("...");
+    return Text("...");
   }
 
-
-  
-chatMessaging(String title, String body) async {
+  chatMessaging(String title, String body) async {
     await http.post(
       Uri.parse('https://fcm.googleapis.com/fcm/send'),
       headers: <String, String>{

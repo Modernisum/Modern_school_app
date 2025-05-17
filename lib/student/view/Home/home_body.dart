@@ -152,18 +152,18 @@ class HomeScreen extends StatelessWidget {
                   } else {
                     return ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: _SubjectController.subjectList.value.length,
+                      itemCount: _SubjectController.subjectList.length,
                       itemBuilder: ((context, index) {
                         return Padding(
                           padding: EdgeInsets.only(
                               left: 20.w, right: 20.w, bottom: 20.h, top: 10.h),
                           child: GestureDetector(
                             onTap: () {
-                              _LessonsController.getSubjectId(_SubjectController
-                                  .subjectList.value[index].id);
+                              _LessonsController.getSubjectId(
+                                  _SubjectController.subjectList[index].id);
                               Get.to(() => SubjectsScreen(
                                     subjectId: _SubjectController
-                                        .subjectList.value[index].id,
+                                        .subjectList[index].id,
                                   ));
                             },
                             child: Container(
@@ -175,10 +175,10 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   gradient: gradientColor),
                               child: SubjectDetails(
-                                subjectName: _SubjectController
-                                    .subjectList.value[index].name,
+                                subjectName:
+                                    _SubjectController.subjectList[index].name,
                                 teacherName: _SubjectController
-                                    .subjectList.value[index].teacherName,
+                                    .subjectList[index].teacherName,
                               ),
                             ),
                           ),
@@ -222,9 +222,9 @@ class programCard extends StatelessWidget {
     required this.gProgram,
   });
 
-  Program gProgram;
+  final Program gProgram;
 
-  DateFormat _dateFormat = DateFormat('y-MM-d');
+  final DateFormat _dateFormat = DateFormat('y-MM-d');
 
   @override
   Widget build(BuildContext context) {
@@ -284,7 +284,7 @@ class programCard extends StatelessWidget {
                      }*/
 
                       final baseStorage = await getExternalStorageDirectory();
-                      final id = await FlutterDownloader.enqueue(
+                      await FlutterDownloader.enqueue(
                         url: '${gProgram.url}',
                         savedDir: baseStorage!.path,
                         fileName: 'file name',

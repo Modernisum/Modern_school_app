@@ -1,18 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+//import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:school_management_system/student/models/Adjuncts/QuizzModel.dart';
 import 'package:school_management_system/student/models/Adjuncts/filtter/filteredData.dart';
-import 'package:school_management_system/student/models/Adjuncts/filtter/subjectFiltterModel.dart';
+//import 'package:school_management_system/student/models/Adjuncts/filtter/subjectFiltterModel.dart';
 import 'package:school_management_system/student/models/Adjuncts/refrencesFiles.dart';
 import 'package:school_management_system/student/models/Adjuncts/refrencesVideos.dart';
-import 'package:school_management_system/student/view/Adjuncts/refrences.dart';
+//import 'package:school_management_system/student/view/Adjuncts/refrences.dart';
 
 class RefrencesPdfServices {
   getPdfInfo() async {
     List pdfList = [];
     try {
-      final pdfFiles = await FirebaseFirestore.instance
+      await FirebaseFirestore.instance
           .collection('reference')
           .where('type', isEqualTo: 'book')
           .get()
@@ -33,9 +33,8 @@ class RefrencesPdfServices {
   }
 
   getVideos() async {
-    String docID;
     List videosList = [];
-    final pdfFiles = await FirebaseFirestore.instance
+    await FirebaseFirestore.instance
         .collection('reference')
         .where('type', isEqualTo: 'video')
         .get()
@@ -56,7 +55,7 @@ class RefrencesPdfServices {
   getFiltredDataPdf(FiltredData filter) async {
     var filtredDataList = [].obs;
 
-    var filtredData = await FirebaseFirestore.instance
+    await FirebaseFirestore.instance
         .collection('reference')
         .where('subjectName', isEqualTo: filter.subject)
         .where('grade', isEqualTo: filter.grade)
@@ -76,7 +75,7 @@ class RefrencesPdfServices {
   getFiltredDataVideo(FiltredData filter) async {
     var filtredDataList = [].obs;
 
-    var filtredData = await FirebaseFirestore.instance
+    await FirebaseFirestore.instance
         .collection('reference')
         .where('subjectName', isEqualTo: filter.subject)
         .where('grade', isEqualTo: filter.grade)

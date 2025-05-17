@@ -8,7 +8,7 @@ import 'package:school_management_system/student/view/Subjects/LessonsScreen.dar
 import 'package:school_management_system/student/view/Subjects/MarksScreen.dart';
 
 var _controller = Get.put<lessonsController>(lessonsController());
-var lessonList = _controller.lessonslist.value;
+// Removed invalid direct access to .value; access lessonslist via _controller.lessonslist inside widgets or methods.
 
 class SubjectsScreen extends StatefulWidget {
   const SubjectsScreen({

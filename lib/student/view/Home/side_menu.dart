@@ -8,7 +8,6 @@ import 'package:school_management_system/public/utils/constant.dart';
 import '../../../public/utils/font_style.dart';
 import '../../../routes/app_pages.dart';
 import '../../controllers/home_controller.dart';
-import '../../resources/Parent/parentApi.dart';
 import '../../resources/complaint/complaintApi.dart';
 
 var homeController = Get.put<HomeController>(HomeController());

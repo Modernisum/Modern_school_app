@@ -1,26 +1,25 @@
 import 'dart:io';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:path_provider/path_provider.dart';
+//import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 import 'package:school_management_system/public/utils/font_families.dart';
 import 'package:school_management_system/student/controllers/RefrencesController.dart';
 import 'package:get/get.dart';
-import 'package:school_management_system/student/models/Adjuncts/refrencesFiles.dart';
+//import 'package:school_management_system/student/models/Adjuncts/refrencesFiles.dart';
 import 'package:school_management_system/student/resources/RefrencesServices/RefrencesPdfServices.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
-import '../../../teacher/view/tasks/AddFiles/components/SelectFile.dart';
+//import 'package:url_launcher/url_launcher_string.dart';
+//import '../../../teacher/view/tasks/AddFiles/components/SelectFile.dart';
 import '../../../teacher/view/tasks/studentsOfTask.dart';
 
 var _controller = Get.put(RefrencesController());
-var _filesInfo = _controller.filesinfo;
 
 var re = RefrencesPdfServices();
 
@@ -28,15 +27,10 @@ class RefrencesPdf extends StatelessWidget {
   const RefrencesPdf({Key? key}) : super(key: key);
 
   @override
-  void initState() {
-    print('Helooooooooooooooooooo');
-  }
-
-  @override
   Widget build(BuildContext context) {
-    print(_controller.filesinfo.value);
+    print(_controller.filesinfo);
     _controller.getPdfFiles();
-    print(_controller.filesinfo.value);
+    print(_controller.filesinfo);
     return SingleChildScrollView(
       child: SizedBox(
           height: 600.h,
@@ -57,8 +51,8 @@ class RefrencesPdf extends StatelessWidget {
                     } else {
                       return ListView.builder(
                         itemCount: _controller.isFiltred
-                            ? _controller.filtredDataListPdf.value.length
-                            : _controller.filesinfo.value.length,
+                            ? _controller.filtredDataListPdf.length
+                            : _controller.filesinfo.length,
                         itemBuilder: (BuildContext context, int index) {
                           _controller.getPdfFiles();
                           if (_controller.filesinfo.isEmpty) {
@@ -68,21 +62,19 @@ class RefrencesPdf extends StatelessWidget {
                           } else {
                             if (!_controller.isFiltred) {
                               return RefrenecesFileCard(
-                                filename:
-                                    _controller.filesinfo.value[index].fileName,
-                                subject:
-                                    _controller.filesinfo.value[index].subject,
-                                url: _controller.filesinfo.value[index].url,
+                                filename: _controller.filesinfo[index].fileName,
+                                subject: _controller.filesinfo[index].subject,
+                                url: _controller.filesinfo[index].url,
                               );
                             } else {
                               if (_controller.filtredDataListPdf.isNotEmpty) {
                                 return RefrenecesFileCard(
                                   filename: _controller
-                                      .filtredDataListPdf.value[index].fileName,
+                                      .filtredDataListPdf[index].fileName,
                                   subject: _controller
-                                      .filtredDataListPdf.value[index].subject,
-                                  url: _controller
-                                      .filtredDataListPdf.value[index].url,
+                                      .filtredDataListPdf[index].subject,
+                                  url:
+                                      _controller.filtredDataListPdf[index].url,
                                 );
                               } else
                                 return Center(
@@ -134,10 +126,10 @@ class RefrenecesFileCard extends StatelessWidget {
     this.url,
   }) : super(key: key);
 
-  @override
   final filename;
   final subject;
   final url;
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(

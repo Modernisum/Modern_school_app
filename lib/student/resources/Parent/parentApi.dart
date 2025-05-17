@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:school_management_system/student/models/user.dart';
+//import 'package:school_management_system/student/models/user.dart';
 import 'package:school_management_system/student/resources/Parent/stparentmodel.dart';
 
 class ParentApi {

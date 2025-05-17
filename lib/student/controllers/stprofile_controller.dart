@@ -7,7 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:school_management_system/public/config/user_information.dart';
 import 'package:school_management_system/student/resources/student_services/stservices.dart';
 
-import '../../teacher/resources/ProfilesServices/SProfileservices.dart';
+//import '../../teacher/resources/ProfilesServices/SProfileservices.dart';
 import '../resources/stProfileServices/stProfileServices.dart';
 import '../resources/student_services/storage_methods.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+//import 'package:get/get.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 
 import '../../../../public/utils/font_families.dart';
@@ -13,7 +13,6 @@ class AnnouncementsCard extends StatelessWidget {
     this.content,
   }) : super(key: key);
 
-  @override
   final title;
   final content;
   final date;

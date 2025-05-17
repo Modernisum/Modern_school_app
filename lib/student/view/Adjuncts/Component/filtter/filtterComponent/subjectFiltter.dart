@@ -41,7 +41,6 @@ class SubjectRadioCard extends StatelessWidget {
     this.subjectName,
   }) : super(key: key);
 
-  @override
   final subjectIndex;
   final subjectName;
 
