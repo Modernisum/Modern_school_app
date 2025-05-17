@@ -26,13 +26,12 @@ class TeacherPdfRefrences extends StatelessWidget {
                     return LoadingCircle();
                   } else {
                     return ListView.builder(
-                      itemCount: _controller.pdfList.value.length,
+                      itemCount: _controller.pdfList.length,
                       itemBuilder: (BuildContext context, int index) {
                         return RefrenecesFileCard(
-                          filename: _controller.pdfList.value[index].file_name,
-                          subject:
-                              _controller.pdfList.value[index].subject_name,
-                          url: _controller.pdfList.value[index].url,
+                          filename: _controller.pdfList[index].file_name,
+                          subject: _controller.pdfList[index].subject_name,
+                          url: _controller.pdfList[index].url,
                         );
                       },
                     );

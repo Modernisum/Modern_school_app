@@ -34,10 +34,10 @@ class TVideos extends StatelessWidget {
                         return LoadingCircle();
                       } else {
                         return ListView.builder(
-                          itemCount: _controller.VideosList.value.length,
+                          itemCount: _controller.VideosList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return RefrencesVideoCard(
-                                url: _controller.VideosList.value[index].url);
+                                url: _controller.VideosList[index].url);
                           },
                         );
                       }

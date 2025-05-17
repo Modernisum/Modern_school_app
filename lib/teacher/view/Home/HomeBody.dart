@@ -9,8 +9,6 @@ import 'package:school_management_system/teacher/controllers/home_controller.dar
 import 'package:school_management_system/teacher/view/TAnnouncements/TAnnouncementsScreen.dart';
 import 'package:school_management_system/teacher/view/TProfile/TProfileScreen.dart';
 
-var _controller = TeacherHomeController();
-
 class HomeBody extends StatelessWidget {
   HomeBody({Key? key}) : super(key: key);
 
@@ -30,8 +28,7 @@ class HomeBody extends StatelessWidget {
           child: GetBuilder<TeacherHomeController>(
             init: TeacherHomeController(),
             builder: (controller) => CostumHomeAppBar(
-                title: controller
-                    .appBarTitles.value[controller.currentIndex.value],
+                title: controller.appBarTitles[controller.currentIndex.value],
                 style: redHatRegularStyle(fontSize: 20, color: Colors.white),
                 ontap: () {
                   Get.to(() => TAnnouncementsScreen());
@@ -42,7 +39,7 @@ class HomeBody extends StatelessWidget {
           init: TeacherHomeController(),
           builder: (controller) {
             return controller
-                .bottomNavgationBarPages.value[controller.currentIndex.value];
+                .bottomNavgationBarPages[controller.currentIndex.value];
           },
         ),
         bottomNavigationBar: GetBuilder(

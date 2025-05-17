@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:school_management_system/public/config/user_information.dart';
-import 'package:school_management_system/student/models/task/task_model.dart';
-import 'package:school_management_system/student/view/Adjuncts/refrences.dart';
+//import 'package:school_management_system/student/models/task/task_model.dart';
+//import 'package:school_management_system/student/view/Adjuncts/refrences.dart';
 import 'package:school_management_system/teacher/model/Tasks/tasksModel.dart';
-import 'package:school_management_system/teacher/view/tasks/AddFiles/components/Tgrade.dart';
+//import 'package:school_management_system/teacher/view/tasks/AddFiles/components/Tgrade.dart';
 
 import '../../model/Tasks/checkedStudentTaskInfo.dart';
 import '../../model/Tasks/studentTaskInfo.dart';
@@ -133,7 +133,6 @@ class TaskServices {
       File file, String tname, String taskname, String grade) async {
     print('upload start');
     print(tname);
-    if (file == null) return;
     //gs://school-management-system-6b1c2.appspot.com/tasks/2/Ahmad Teacher
 
     final destination = '/tasks/$grade/$tname/$taskname';

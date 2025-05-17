@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:school_management_system/teacher/controllers/RefrencesControllers/TPdfRefrencesController.dart';
+//import 'package:school_management_system/teacher/controllers/RefrencesControllers/TPdfRefrencesController.dart';
 import 'package:school_management_system/teacher/view/tasks/AddFiles/components/SelectFile.dart';
 
 import '../../../../public/utils/constant.dart';
@@ -144,18 +144,18 @@ class ButtonsFunctions {
                                     _pdfController.updateUI(newValue);
                                   },
                                   items: List.generate(
-                                      _pdfController.subjectList.value.length,
+                                      _pdfController.subjectList.length,
                                       (index) {
                                     print('this is drop item ' +
-                                        _pdfController.subjectList.value[index]
-                                            .subjectName
+                                        _pdfController
+                                            .subjectList[index].subjectName
                                             .toString());
                                     return DropdownMenuItem<String>(
-                                        value: _pdfController.subjectList
-                                            .value[index].subjectName
+                                        value: _pdfController
+                                            .subjectList[index].subjectName
                                             .toString(),
                                         child: Text(
-                                            '${_pdfController.subjectList.value[index].subjectName}'));
+                                            '${_pdfController.subjectList[index].subjectName}'));
                                   }),
                                 ),
                               );
@@ -505,14 +505,14 @@ class ButtonsFunctions {
                                     _pdfController.updateUI(newValue);
                                   },
                                   items: List.generate(
-                                      _pdfController.subjectList.value.length,
+                                      _pdfController.subjectList.length,
                                       (index) {
                                     return DropdownMenuItem<String>(
-                                        value: _pdfController.subjectList
-                                            .value[index].subjectName
+                                        value: _pdfController
+                                            .subjectList[index].subjectName
                                             .toString(),
                                         child: Text(
-                                            '${_pdfController.subjectList.value[index].subjectName}'));
+                                            '${_pdfController.subjectList[index].subjectName}'));
                                   }),
                                 ),
                               );

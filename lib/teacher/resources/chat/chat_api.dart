@@ -5,7 +5,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:school_management_system/student/resources/chat/chat_data.dart';
 import 'package:school_management_system/teacher/model/message.dart';
 
-
 import 'dart:io';
 
 import 'package:school_management_system/teacher/model/user.dart';
@@ -51,8 +50,6 @@ class FirebaseApi {
   static Future addRandomUsers(List<User> users) async {
     final refUsers = FirebaseFirestore.instance.collection('students');
 
-    final allUsers = await refUsers.get();
-
     for (final user in users) {
       final userDoc = refUsers.doc();
       final newUser = user.copyWith(idUser: userDoc.id);
@@ -63,7 +60,7 @@ class FirebaseApi {
 
   static LoadNameFromApi(String name) async {
     List<User> founded = [];
-    final allusers = await FirebaseFirestore.instance
+    await FirebaseFirestore.instance
         .collection('students')
         .where('first_name', isEqualTo: name)
         .get()
@@ -88,7 +85,7 @@ class FirebaseApi {
     try {
       final ref = FirebaseStorage.instance.ref(destination);
       return ref.putFile(file);
-    } on FirebaseException catch (e) {
+    } on FirebaseException {
       return null;
     }
   }

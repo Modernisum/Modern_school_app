@@ -86,7 +86,7 @@ class SprofileServices {
             exam1: exam1,
             exam2: exam2,
           ));
-          dropController.subjectsDrop.value[subjectName.toString()] =
+          dropController.subjectsDrop[subjectName.toString()] =
               subjectId.toString();
           print('Subject name is ');
           print(subjectName.toString());
@@ -97,7 +97,7 @@ class SprofileServices {
 
       dropController.subjectNames.clear();
       s.forEach((element) {
-        dropController.subjectNames.value.add(list[element]);
+        dropController.subjectNames.add(list[element]);
       });
 
       return subjectMarkLits;

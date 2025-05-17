@@ -22,10 +22,10 @@ class TrefChosingGradeBar extends StatelessWidget {
         init: TreferenceBottomsheetController(),
         builder: ((controller) => ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: _controller.gradeList.value.length,
+              itemCount: _controller.gradeList.length,
               itemBuilder: (BuildContext context, int index) {
                 return GradeOption(
-                  grade: _controller.gradeList.value[index],
+                  grade: _controller.gradeList[index],
                   index: index + 1,
                 );
               },
