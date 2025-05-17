@@ -32,7 +32,7 @@ class HomeController extends GetxController {
   getPrograms() async {
     print('getting programs ...');
     myprograms.value = await ProgramApi.getNewPrograms();
-    print(myprograms.value);
+    print(myprograms);
     print('Done!');
     update();
   }
@@ -41,7 +41,7 @@ class HomeController extends GetxController {
     print('getting childs ...');
     print(UserInformation.email);
     mychilds.value = await ParentApi.getStudents(UserInformation.email);
-    print(mychilds.value);
+    print(mychilds);
     print('Done!');
     update();
   }

@@ -1,8 +1,3 @@
-
-
-
-
-
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -22,7 +17,7 @@ class SplashController extends GetxController {
     print(Uid);
     if (Uid != null) {
       UserInformation.User_uId = Uid;
-      
+
       Get.offAllNamed('/sthome');
       print(Uid);
     } else {

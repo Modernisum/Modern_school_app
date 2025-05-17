@@ -38,6 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool teacher = false;
   bool admin = false;
   bool parent = false;
+  bool _isLoading = false;
   var stcolor = gradientColor2,
       adcolor = gradientColor2,
       tecolor = gradientColor2,
@@ -47,8 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
       teicotextcolor = gray,
       paricotextcolor = gray;
 
-  GoogleSignInAccount? _userObj;
-  GoogleSignIn _googleSignIn = GoogleSignIn();
+  //GoogleSignIn _googleSignIn = GoogleSignIn();
   GetStorage storage = GetStorage();
   String url = "";
   String name = "";
@@ -81,20 +81,19 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Pics pics = Pics();
     Size size = MediaQuery.of(context).size;
 
     final RoundedLoadingButtonController _buttonController =
         RoundedLoadingButtonController();
-    bool _isLoading = false;
-
-    @override
-    void dispose() {
-      super.dispose();
-      _emailController.dispose();
-      _passwordController.dispose();
-    }
 
     void Login() async {
       setState(() {
@@ -124,8 +123,8 @@ class _LoginScreenState extends State<LoginScreen> {
           print("Studenttttttttt");
           print(okst);
 
-          String docID;
-          String docID2;
+          // String docID;
+          //String docID2;
           if (okst) {
             await FirebaseFirestore.instance
                 .collection('students')
@@ -186,7 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
           print(okte);
 
           if (okte) {
-            String docID;
+            //String docID;
             await FirebaseFirestore.instance
                 .collection('teacher')
                 .where('uid', isEqualTo: UserInformation.User_uId)
@@ -245,8 +244,7 @@ class _LoginScreenState extends State<LoginScreen> {
             accessToken: googleSignInAuthentication.accessToken,
             idToken: googleSignInAuthentication.idToken);
         try {
-          final UserCredential userCredential =
-              await firebaseAuth.signInWithCredential(oAuthCredential);
+          await firebaseAuth.signInWithCredential(oAuthCredential);
         } catch (e) {
           print(e);
         }
@@ -257,8 +255,6 @@ class _LoginScreenState extends State<LoginScreen> {
             firebaseAuth.currentUser!.displayName.toString();
         UserInformation.phone =
             firebaseAuth.currentUser!.phoneNumber.toString();
-        String str = firebaseAuth.currentUser!.displayName.toString();
-        var arr = str.split(' ');
         print(firebaseAuth.currentUser!.displayName);
         print(firebaseAuth.currentUser!.photoURL);
         print(firebaseAuth.currentUser!.phoneNumber);

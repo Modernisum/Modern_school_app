@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:school_management_system/public/config/user_information.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 
 import '../utils/util.dart';
 import '../widgets/custom_verify_textfield.dart';
@@ -20,7 +20,7 @@ final TextEditingController _charB = TextEditingController();
 final TextEditingController _charC = TextEditingController();
 final TextEditingController _charD = TextEditingController();
 late String A, B, C, D;
-final FirebaseAuth _auth = FirebaseAuth.instance;
+//final FirebaseAuth _auth = FirebaseAuth.instance;
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 GetStorage storage = GetStorage();
 
@@ -38,10 +38,10 @@ final newteacher = {
   "date_left": Timestamp.now(),
   "date_start": Timestamp.now(),
   "subjects": [],
-  "University":"nothing",
-  "graduateYear":"nothing",
-  "specializtion":"nothing",
-  "study":"nothing",
+  "University": "nothing",
+  "graduateYear": "nothing",
+  "specializtion": "nothing",
+  "study": "nothing",
 };
 
 class _OtpState extends State<Otp> {

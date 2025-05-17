@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "1085414527934",
-    "firebase_url": "https://sample-firebase-ai-app-200a6-default-rtdb.firebaseio.com",
-    "project_id": "sample-firebase-ai-app-200a6",
-    "storage_bucket": "sample-firebase-ai-app-200a6.appspot.com"
+    "project_number": "438141485295",
+    "firebase_url": "https://modernschool-e873a-default-rtdb.firebaseio.com",
+    "project_id": "modernschool-e873a",
+    "storage_bucket": "modernschool-e873a.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1085414527934:android:5c28d533fb6e64423a1fef",
+        "mobilesdk_app_id": "1:438141485295:android:7b1f684feaf1bfd9dcdb1a",
         "android_client_info": {
           "package_name": "com.example.school_management_system"
         }
@@ -16,26 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDB4dCQB-yvD90rlhuiidd_rTE7YT-v8-Q"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1085414527934:android:2b4c31239d44c1fa3a1fef",
-        "android_client_info": {
-          "package_name": "com.example.teacher_app"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDB4dCQB-yvD90rlhuiidd_rTE7YT-v8-Q"
+          "current_key": "AIzaSyABwYGuD1Sk5GcMnU5D570FP0mscrX-cKA"
         }
       ],
       "services": {

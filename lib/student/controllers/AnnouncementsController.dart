@@ -1,9 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/state_manager.dart';
 import 'package:school_management_system/student/resources/AnnouncementsServeces/AnnouncementsServeces.dart';
-import 'package:school_management_system/student/view/Announcements/AnnouncementsPage.dart';
+//import 'package:school_management_system/student/view/Announcements/AnnouncementsPage.dart';
 
-import '../models/Announcements/AnnouncementsModel.dart';
+//import '../models/Announcements/AnnouncementsModel.dart';
 
 class AnnouncementsController extends GetxController {
   var announcementsServeces = AnnouncementsServeces();

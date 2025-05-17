@@ -1,7 +1,7 @@
 import 'package:get/state_manager.dart';
 import 'package:school_management_system/student/models/Subjects/SubjectsModel.dart';
 import 'package:school_management_system/student/resources/subject/lessonsServices.dart';
-import 'package:school_management_system/student/view/Subjects/LessonsScreen.dart';
+//import 'package:school_management_system/student/view/Subjects/LessonsScreen.dart';
 
 class lessonsController extends GetxController {
   var lessonsServices = LessonsServices();
@@ -16,12 +16,11 @@ class lessonsController extends GetxController {
   var numberOftakenLessons = 0.obs;
   var numberOfAllLessons = 0.obs;
   updateCheckBox(int index) {
-    if (lessonslist.value[index - 1].checked == true)
+    if (lessonslist[index - 1].checked == true)
       --numberOftakenLessons.value;
     else
       ++numberOftakenLessons.value;
-    lessonslist.value[index - 1].checked =
-        !lessonslist.value[index - 1].checked;
+    lessonslist[index - 1].checked = !lessonslist[index - 1].checked;
 
     update();
   }
@@ -52,5 +51,4 @@ class lessonsController extends GetxController {
   }
 
   //Marks
-
 }

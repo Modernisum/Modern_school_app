@@ -26,7 +26,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -50,21 +53,11 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDB4dCQB-yvD90rlhuiidd_rTE7YT-v8-Q',
-    appId: '1:1085414527934:android:5c28d533fb6e64423a1fef',
-    messagingSenderId: '1085414527934',
-    projectId: 'sample-firebase-ai-app-200a6',
-    databaseURL: 'https://sample-firebase-ai-app-200a6-default-rtdb.firebaseio.com',
-    storageBucket: 'sample-firebase-ai-app-200a6.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD7PGQ1plswWWh7ok_JP8jR8MbtBeGtrYo',
-    appId: '1:1085414527934:ios:57e7af13d7fe74a53a1fef',
-    messagingSenderId: '1085414527934',
-    projectId: 'sample-firebase-ai-app-200a6',
-    databaseURL: 'https://sample-firebase-ai-app-200a6-default-rtdb.firebaseio.com',
-    storageBucket: 'sample-firebase-ai-app-200a6.appspot.com',
-    iosBundleId: 'com.example.schoolManagementSystem',
+    apiKey: 'AIzaSyABwYGuD1Sk5GcMnU5D570FP0mscrX-cKA',
+    appId: '1:438141485295:android:7b1f684feaf1bfd9dcdb1a',
+    messagingSenderId: '438141485295',
+    projectId: 'modernschool-e873a',
+    databaseURL: 'https://modernschool-e873a-default-rtdb.firebaseio.com',
+    storageBucket: 'modernschool-e873a.firebasestorage.app',
   );
 }

@@ -5,7 +5,6 @@ import 'package:get_storage/get_storage.dart';
 import 'package:school_management_system/public/config/user_information.dart';
 import 'package:school_management_system/public/utils/constant.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 import '../utils/util.dart';
 import '../widgets/custom_verify_textfield.dart';
@@ -23,7 +22,7 @@ GetStorage storage = GetStorage();
 
 late String A, B, C, D;
 
-final FirebaseAuth _auth = FirebaseAuth.instance;
+//final FirebaseAuth _auth = FirebaseAuth.instance;
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 String? str = UserInformation.fullname;
