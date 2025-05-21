@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:school_management_system/student/models/Adjuncts/filtter/gradeCircle.dart';
-import 'package:school_management_system/student/view/Adjuncts/Component/filtter/filtterComponent/subjectFiltter.dart';
-import 'package:school_management_system/teacher/model/Home/classroomSectionModel.dart';
+//import 'package:school_management_system/student/models/Adjuncts/filtter/gradeCircle.dart';
+//import 'package:school_management_system/student/view/Adjuncts/Component/filtter/filtterComponent/subjectFiltter.dart';
+//import 'package:school_management_system/teacher/model/Home/classroomSectionModel.dart';
 import 'package:school_management_system/teacher/model/Tasks/tasksModel.dart';
-import 'package:school_management_system/teacher/view/tasks/AddFiles/components/Tgrade.dart';
+//import 'package:school_management_system/teacher/view/tasks/AddFiles/components/Tgrade.dart';
 import 'package:path/path.dart';
 import 'package:school_management_system/teacher/view/tasks/TeacherTasksPage.dart';
 
@@ -73,7 +73,7 @@ class BottomSheetController extends GetxController {
   }
 
   updateFile(File newfile) {
-    file = newfile == null ? file : newfile;
+    file = newfile;
     fileName.value = basename(newfile.path);
     update();
   }
@@ -84,9 +84,9 @@ class BottomSheetController extends GetxController {
     super.onInit();
     GradeNumber.value = await taskServices.getTeachergardes();
     print('Grades is ');
-    print(GradeNumber.value);
+    print(GradeNumber);
     teachersubject.value =
-        await taskServices.getTeacherSubject(GradeNumber.value);
+        await taskServices.getTeacherSubject(GradeNumber.toList());
   }
 
   addTask() async {
@@ -102,8 +102,8 @@ class BottomSheetController extends GetxController {
     var deadlineFormated = Timestamp.fromDate(deadline.value);
     var taskinfo = UploadTaskModel(
       name: taskName.value,
-      classId: classSection.value[currentClassSection.value - 1].toString(),
-      grade: GradeNumber.value[currentGrade.value - 1].toString(),
+      classId: classSection[currentClassSection.value - 1].toString(),
+      grade: GradeNumber.toList()[currentGrade.value - 1].toString(),
       file: file,
       deadLine: deadlineFormated,
       subjectName: selectedsubjecname.value.toString(),

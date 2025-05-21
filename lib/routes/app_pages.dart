@@ -12,11 +12,11 @@ import 'package:school_management_system/student/view/Home/home.dart';
 import 'package:school_management_system/student/view/Profile/stprofile.dart';
 import 'package:school_management_system/student/view/Subjects/SubjectsScreen.dart';
 import 'package:school_management_system/student/view/TasksScreen/TasksPage.dart';
-import 'package:school_management_system/teacher/binding/lessonBinding.dart';
+//import 'package:school_management_system/teacher/binding/lessonBinding.dart';
 import 'package:school_management_system/teacher/view/Home/HomeBody.dart';
 import 'package:school_management_system/teacher/view/TSubject/Subjects/SubjectScreen.dart';
 import 'package:school_management_system/teacher/view/TSubject/TSubjectsInfo.dart';
-import 'package:school_management_system/teacher/view/TSubject/TlessonScreen.dart';
+//import 'package:school_management_system/teacher/view/TSubject/TlessonScreen.dart';
 
 import '../parent/view/home.dart';
 import '../public/login/login_screen.dart';
@@ -28,7 +28,7 @@ import '../student/view/chatSearch/chat_search.dart';
 import '../teacher/binding/StudentsOfTaskBinding.dart';
 import '../teacher/binding/TAdjunctsBinding.dart';
 import '../teacher/view/Adjuncts/TeacherAdjuncts.dart';
-import '../teacher/view/Home/teacher_home.dart';
+//import '../teacher/view/Home/teacher_home.dart';
 import '../teacher/view/TaskScreen/task_screen.dart';
 import '../teacher/view/tasks/studentsOfTask.dart';
 

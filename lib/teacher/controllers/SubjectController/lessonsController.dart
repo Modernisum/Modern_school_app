@@ -20,7 +20,7 @@ class TLessonsController extends GetxController {
     lessonslist.value = item.lessons;
     numberOflessons.value = item.numberOflesson;
     numberOfTakenLessons.value = item.numberOfTakenLessons;
-    print(lessonslist.value);
+    print(lessonslist);
     print(numberOflessons.value);
     print(numberOfTakenLessons.value);
   }
@@ -34,8 +34,9 @@ class TLessonsController extends GetxController {
   }
 
   updateCheckBox(int index) {
-    lessonslist.value[index - 1].checked =
-        !lessonslist.value[index - 1].checked;
+    var updatedList = List.from(lessonslist);
+    updatedList[index - 1].checked = !updatedList[index - 1].checked;
+    lessonslist.value = updatedList;
     print('checked');
     update();
   }

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:school_management_system/student/resources/task/task_api.dart';
-import 'package:school_management_system/teacher/model/Tasks/checkedStudentTaskInfo.dart';
+//import 'package:school_management_system/student/resources/task/task_api.dart';
+//import 'package:school_management_system/teacher/model/Tasks/checkedStudentTaskInfo.dart';
 
 import '../../resources/TaskServices/TaskServices.dart';
 
@@ -16,7 +16,7 @@ class CheckedStudentTaskInfoController extends GetxController {
   }
 
   updateList() {
-    print(studentList.value);
+    print(this.studentList);
     studentList.refresh();
     update();
     super.refresh();

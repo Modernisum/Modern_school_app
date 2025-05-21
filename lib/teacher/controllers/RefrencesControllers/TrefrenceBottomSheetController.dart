@@ -31,7 +31,7 @@ class TreferenceBottomsheetController extends GetxController {
   }
 
   updateFile(File newfile) {
-    file = newfile == null ? file : newfile;
+    file = newfile;
     print(fileName.value.toString());
     fileName.value = basename(newfile.path);
     print(fileName.value.toString());
@@ -41,14 +41,14 @@ class TreferenceBottomsheetController extends GetxController {
   addPdf() async {
     print(selectedSuject.value);
     print(currentGrade.value);
-    var index = subjectList.value
+    var index = subjectList
         .indexWhere((element) => element.subjectName == selectedSuject.value);
     print(subjectList[index].subjectId);
     print(file);
     print(fileName.value);
     print(pdf_name.value);
     await refServices.addFile(TpdfAddFileModel(
-      grade: int.parse(gradeList.value[currentGrade.value]),
+      grade: int.parse(gradeList[currentGrade.value]),
       name: pdf_name.value,
       subjectName: selectedSuject.value,
       subject_id: subjectList[index].subjectId,
@@ -65,14 +65,14 @@ class TreferenceBottomsheetController extends GetxController {
   addVideo() async {
     print(selectedSuject.value);
     print(currentGrade.value);
-    var index = subjectList.value
+    var index = subjectList
         .indexWhere((element) => element.subjectName == selectedSuject.value);
     print(subjectList[index].subjectId);
     print(video_name.value);
     print(video_url.value);
 
     await refServices.addVideo(AddVideoModel(
-      grade: int.parse(gradeList.value[currentGrade.value]),
+      grade: int.parse(gradeList[currentGrade.value]),
       name: video_name.value,
       subjectName: selectedSuject.value,
       subject_id: subjectList[index].subjectId,
@@ -89,7 +89,7 @@ class TreferenceBottomsheetController extends GetxController {
     super.onInit();
     print(TeacherSubjects.subjectsList);
     subjectList.value = TeacherSubjects.subjectsList;
-    selectedSuject.value = subjectList.value[0].subjectName;
+    selectedSuject.value = subjectList[0].subjectName;
     gradeList.value = await refServices.getAllGrade();
   }
 }

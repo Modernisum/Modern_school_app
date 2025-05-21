@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:school_management_system/teacher/Teacher_global_info/Subjects_of_teacher/TeacherSubjects.dart';
 import 'package:school_management_system/teacher/controllers/SubjectController/TeacherSubjectController.dart';
-import 'package:school_management_system/teacher/model/Home/classRoomModel.dart';
+//import 'package:school_management_system/teacher/model/Home/classRoomModel.dart';
 import 'package:school_management_system/teacher/resources/TClassesService/TClassesServices.dart';
 import 'package:school_management_system/teacher/resources/program/Programapi.dart';
 import 'package:school_management_system/teacher/view/Adjuncts/TeacherAdjuncts.dart';
@@ -38,7 +38,7 @@ var myprograms = [].obs;
   getPrograms() async {
     print('getting programs ...');
     myprograms.value = await ProgramApiT.getNewPrograms();
-    print(myprograms.value);
+    print(myprograms.toList());
     print('Done!');
     update();
   }

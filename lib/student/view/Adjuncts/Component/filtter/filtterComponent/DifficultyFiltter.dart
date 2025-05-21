@@ -6,7 +6,7 @@ import 'package:school_management_system/public/utils/font_families.dart';
 import 'package:school_management_system/student/controllers/RefrencesController.dart';
 
 final _controller = Get.put(RefrencesController());
-var difficultyList = _controller.difficulty.value;
+// Remove the top-level access to .value; access it inside the widget tree.
 
 class ChosingDifficultyBar extends StatelessWidget {
   const ChosingDifficultyBar({
@@ -20,18 +20,21 @@ class ChosingDifficultyBar extends StatelessWidget {
       child: SizedBox(
         height: 60.h,
         width: 428.w,
-        child: GetBuilder(
+        child: GetBuilder<RefrencesController>(
           init: RefrencesController(),
-          builder: ((controller) => ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: difficultyList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return DifficultyBar(
-                    difficulty: difficultyList[index].difficulty,
-                    index: index + 1,
-                  );
-                },
-              )),
+          builder: (controller) {
+            final difficultyList = controller.difficulty;
+            return ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: difficultyList.length,
+              itemBuilder: (BuildContext context, int index) {
+                return DifficultyBar(
+                  difficulty: difficultyList[index].difficulty,
+                  index: index + 1,
+                );
+              },
+            );
+          },
         ),
       ),
     );

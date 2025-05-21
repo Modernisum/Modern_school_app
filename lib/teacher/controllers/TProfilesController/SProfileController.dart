@@ -26,7 +26,7 @@ class SProfileController extends GetxController {
         studentInfo.value.grade.toString(),
         studentInfo.value.classId.toString(),
         studentInfo.value.uid.toString());
-    dropController.selectedValue.value = dropController.subjectNames.value[0];
+    dropController.selectedValue.value = dropController.subjectNames.first;
   }
 
   @override

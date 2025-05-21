@@ -7,6 +7,6 @@ class SubjectController extends GetxController {
   var subjectList = [].obs;
   getSujects() async {
     subjectList.value = await subjectServices.getUserSubjects();
-    UserInformation.Subjects = subjectList.value;
+    UserInformation.Subjects = subjectList.toList();
   }
 }

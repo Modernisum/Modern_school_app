@@ -6,7 +6,6 @@ import 'package:school_management_system/public/utils/font_families.dart';
 import 'package:school_management_system/student/controllers/RefrencesController.dart';
 
 final _controller = Get.put(RefrencesController());
-var gradeList = _controller.GradeNumber.value;
 
 class ChosingGradeBar extends StatelessWidget {
   const ChosingGradeBar({
@@ -18,18 +17,21 @@ class ChosingGradeBar extends StatelessWidget {
     return SizedBox(
       height: 55.h,
       width: 428.w,
-      child: GetBuilder(
+      child: GetBuilder<RefrencesController>(
         init: RefrencesController(),
-        builder: ((controller) => ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: gradeList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return GradeOption(
-                  grade: gradeList[index].grade,
-                  index: index + 1,
-                );
-              },
-            )),
+        builder: (controller) {
+          final gradeList = controller.GradeNumber;
+          return ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: gradeList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return GradeOption(
+                grade: gradeList[index].grade,
+                index: index + 1,
+              );
+            },
+          );
+        },
       ),
     );
   }

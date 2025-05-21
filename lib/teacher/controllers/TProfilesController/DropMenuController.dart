@@ -28,14 +28,14 @@ class DropMenuController extends GetxController {
   }
 
   addMark() async {
-    print(subjectsDrop.value[selectedValue.value.toString()]);
+    print(subjectsDrop[selectedValue.value.toString()]);
     print(selectedType.value.toLowerCase());
     print(fmark.value);
     print(mark.value);
     print(uid.value);
     print(grade.value);
     var item = AddingMarkModel(
-      subject: subjectsDrop.value[selectedValue.value.toString()].toString(),
+      subject: subjectsDrop[selectedValue.value.toString()].toString(),
       type: selectedType.value.toLowerCase(),
       fmark: int.parse(fmark.value),
       mark: int.parse(mark.value),

@@ -5,7 +5,7 @@ import 'package:get/state_manager.dart';
 import 'package:school_management_system/teacher/controllers/TasksControllers/CheckedStudentTaskInfoController.dart';
 import 'package:school_management_system/teacher/model/Tasks/studentTaskInfo.dart';
 import 'package:school_management_system/teacher/resources/TaskServices/TaskServices.dart';
-import 'package:school_management_system/teacher/view/tasks/studentsOfTask.dart';
+//import 'package:school_management_system/teacher/view/tasks/studentsOfTask.dart';
 
 import '../../../main.dart';
 import '../../model/Tasks/checkedStudentTaskInfo.dart';
@@ -35,7 +35,7 @@ class StudentTaskInfoController extends GetxController {
     print(indexForStd.value);
     print(task_result_id.value.toString());
     await taskServices.addMarkForTask(task_result_id.value, newMark.value);
-    StudentTaskInfoModel oldItem = studentsTaskList.value[indexForStd.value];
+    StudentTaskInfoModel oldItem = studentsTaskList.toList()[indexForStd.value];
     var item = CheckedStudentTaskInfo(
       name: oldItem.name,
       photoUrl: oldItem.photoUrl,
@@ -48,8 +48,8 @@ class StudentTaskInfoController extends GetxController {
       task_id: oldItem.task_id,
     );
     var chcontroller = Get.find<CheckedStudentTaskInfoController>();
-    chcontroller.studentList.value.add(item);
-    studentsTaskList.value.removeAt(indexForStd.value);
+    chcontroller.studentList.add(item);
+    studentsTaskList.removeAt(indexForStd.value);
     studentsTaskList.refresh();
     chcontroller.studentList.refresh();
     update();
